@@ -1,8 +1,0 @@
-const $=s=>document.querySelectorAll(s),bar=document.getElementById('bar');
-addEventListener('scroll',()=>{bar.style.width=scrollY/Math.max(1,document.body.scrollHeight-innerHeight)*100+'%'});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');const n=e.target.dataset.n;if(n){let v=0,s=Math.max(1,Math.ceil(n/40));const t=setInterval(()=>{v=Math.min(n,v+s);e.target.textContent=v;if(v>=n)clearInterval(t)},40)}io.unobserve(e.target)}),{threshold:.2});
-$('.rv,[data-n]').forEach(e=>io.observe(e));
-const mb=document.getElementById('mb');mb&&mb.addEventListener('click',()=>{const o=document.querySelector('nav').classList.toggle('open');mb.setAttribute('aria-expanded',o)});
-const ty=document.querySelector('.typed');if(ty){const w=["des sites web.","des applications mobiles.","des logiciels de gestion.","des outils sur mesure."];let i=0,j=0,d=0;(function f(){const s=w[i];j+=d?-1:1;ty.textContent=s.slice(0,j);let t=d?35:80;if(!d&&j==s.length){d=1;t=1600}else if(d&&!j){d=0;i=(i+1)%w.length;t=300}setTimeout(f,t)})()}
-if(!matchMedia('(prefers-reduced-motion:reduce)').matches)$('.card').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-6px)`});c.addEventListener('mouseleave',()=>c.style.transform='')});
-$('.flt .btn').forEach(b=>b.addEventListener('click',()=>{$('.flt .btn').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('.card').forEach(c=>c.parentElement.style.display=(b.dataset.f=='all'||c.dataset.c==b.dataset.f)?'':'none')}));

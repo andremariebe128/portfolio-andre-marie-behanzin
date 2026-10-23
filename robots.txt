@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-andre-marie-behanzin.vercel.app/sitemap.xml
